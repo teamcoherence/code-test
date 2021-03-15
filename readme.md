@@ -29,3 +29,6 @@ lando drush -y config-set "system.site" uuid "cbca58ed-023f-4fb0-9051-46b392946d
 lando drush -y config-import sync
 ```
 
+### Test files
+
+Test module is located at: `docroot/modules/custom/json_sync_test`
