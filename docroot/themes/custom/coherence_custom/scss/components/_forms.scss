@@ -1,0 +1,104 @@
+form input {
+  margin: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=password],
+input.form-text,
+input.form-email,
+input.form-tel,
+input.form-password,
+textarea,
+textarea.form-textarea {
+  background: $coh-color-white;
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border: 1px solid $coh-color-black;
+
+  @include placeholder {
+    color: $coh-color-medium-gray;
+  }
+}
+
+select,
+select.form-select {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  color: $coh-color-black;
+  margin-bottom: 10px;
+}
+
+input.form-submit,
+input[type=submit] {
+  background: $coh-color-black;
+  color: $coh-color-white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $coh-color-black;
+  }
+}
+
+.form-actions {
+  padding: 0;
+}
+
+#edit-actions input {
+  margin: 0;
+}
+
+.form-item {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form .description {
+  margin-top: 5px;
+}
+
+.password-strength__meter {
+  margin-top: 0.5em;
+  background-color: #ebeae4;
+}
+
+.password-strength__indicator {
+  background-color: #77b259;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+
+.password-strength__indicator.is-weak {
+  background-color: #e62600;
+}
+
+.password-strength__indicator.is-fair {
+  background-color: #e09600;
+}
+
+.password-strength__indicator.is-good {
+  background-color: #0074bd;
+}
+
+.password-strength__indicator.is-strong {
+  background-color: #77b259;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+}
+
+input[type=radio] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+}

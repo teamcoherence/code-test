@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Set up private file system.
+ *
+ * JSON files uploaded to files public directory.
+ *
+ * Parse files
+ *
+ * Storing IDs
+ *
+ * Check if ID exists in current CMS
+ *
+ * Check ModifiedDate
+ *
+ * If not latest then update
+ * If ID not found then create
+ *
+ * Process full list of content in CMS to check if anything has been removed
+ *
+ * Cron - once per day
+ */
+
+/**
+ * Cron job to run batch.
+ */
+function json_sync_test_cron() {
+  // Call service
+  // \Drupal::service('json.batch_manager')->process();
+}

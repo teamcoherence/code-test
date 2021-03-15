@@ -1,0 +1,40 @@
+// Variables from DX8
+
+// Website settings
+
+// Base unit settings
+
+$base-unit-size: 16px;
+$apply-to-css: true;
+$unit-conversion: true;
+
+// Color palette
+$coh-color-black: rgba(0, 0, 0, 1);
+$coh-color-white: rgba(255, 255, 255, 1);
+$dark-gray: rgba(26, 26, 26, 1);
+$coh-color-medium-gray: rgba(153, 153, 153, 1);
+$light-gray: rgba(246, 246, 246, 1);
+
+// Font libraries
+
+// Icomoon
+
+@mixin icomoon {
+	speak: none;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: icomoon;
+}
+
+// Responsive grid settings
+
+// @media (max-width: 99.9375rem) {} - lg
+// @media (max-width: 89.9375rem) {} - md
+// @media (max-width: 79.9375rem) {} - sm
+// @media (max-width: 47.9375rem) {} - ps
+// @media (max-width: 35.250rem) {} - xs

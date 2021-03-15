@@ -1,0 +1,7 @@
+json_sync_test.settings:
+  path: '/admin/config/json-sync-test/sync'
+  defaults:
+    _form: '\Drupal\json_sync_test\Form\SyncSettings'
+    _title: 'SIMSL sync settings'
+  requirements:
+    _permission: 'administer site configuration'

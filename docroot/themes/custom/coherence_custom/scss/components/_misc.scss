@@ -1,0 +1,80 @@
+.sitemap {
+  .sitemap-box,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.sitemap-menu {
+  span, a {
+    display:block;
+    margin-bottom: 10px;
+  }
+}
+
+.messages {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-register-tabs {
+  > ul {
+    border-bottom: 1px solid $coh-color-black;
+
+    li {
+      display: inline-block;
+
+      margin: 0;
+
+      a {
+        display: block;
+        padding: 10px;
+
+        &.active {
+          background: $coh-color-black;
+          color: white;
+          margin-bottom: -1px;
+        }
+      }
+    }
+  }
+
+  .simple-tabs-content {
+    padding: 40px 20px 20px;
+    background: #efefef;
+  }
+}
+
+.tabs ul.primary {
+  border-bottom: 1px solid $coh-color-black;
+  background: none;
+  font-size: 0;
+  margin: 10px 0 20px 0;
+
+  li {
+    display: inline-block;
+    border: none;
+    border-radius: 0;
+    float: none;
+    margin: 0;
+    font-size: 1rem;
+
+    a {
+      display: block;
+      padding: 10px;
+      border: none;
+      border-radius: 0;
+      float: none;
+      background: none;
+      height: auto;
+
+      &.is-active {
+        background: $coh-color-black;
+        color: white;
+        margin-bottom: -1px;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
+}

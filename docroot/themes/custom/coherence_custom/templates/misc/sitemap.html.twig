@@ -1,0 +1,30 @@
+<div class="header-separator"></div>
+<div class="sitemap coh-container-boxed">
+    <h1>Sitemap</h1>
+    {% if message %}
+        <div class="sitemap-message">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    {% if sitemap_items %}
+        {% for item in sitemap_items %}
+            {% if item.content is not empty %}
+                <div{{ item.attributes.addClass('sitemap-box') }}>
+                    {% if item.options.show_titles and item.title != '<none>' %}
+                        <h2>{{ item.title }}</h2>
+                    {% endif %}
+                    <div class="content">
+                        {{ item.content }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if additional %}
+        <div class="sitemap-additional">
+            {{ additional }}
+        </div>
+    {% endif %}
+</div>

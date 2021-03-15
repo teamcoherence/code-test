@@ -1,0 +1,4 @@
+json_sync_test.settings:
+  title: 'JSON sync settings'
+  parent: system.admin_config_system
+  route_name: json_sync_test.settings

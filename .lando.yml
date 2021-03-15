@@ -1,0 +1,7 @@
+name: coherence-code-test
+recipe: drupal9
+config:
+  webroot: docroot
+  xdebug: true
+  conf:
+    php: .vscode/php.ini

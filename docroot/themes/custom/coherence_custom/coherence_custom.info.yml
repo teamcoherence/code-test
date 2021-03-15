@@ -1,0 +1,19 @@
+name: Coherence custom theme
+type: theme
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: dx8_subtheme
+
+libraries:
+  - cohesion_theme/global-styling
+  - classy/messages
+  - coherence_custom/global-styling
+
+regions:
+  pre_header: Pre-header
+  header: Header
+  featured: Featured
+  content: Content
+  footer: Footer
+  right_sidebar: Right sidebar
+  no_render: Do not render

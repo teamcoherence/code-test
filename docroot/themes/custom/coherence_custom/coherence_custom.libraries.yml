@@ -1,0 +1,72 @@
+global-styling:
+  css:
+    theme:
+      css/hamburgers.css: {}
+      css/custom.css: {}
+
+backToTop:
+  js:
+    js/back-to-top-link.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal
+
+scrollTo:
+  js:
+    js/scroll-to.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal
+
+socialSharing:
+  js:
+    js/social-sharing.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal
+
+header:
+  js:
+    js/header.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal
+
+componentAnimation:
+  js:
+    js/component-animation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal
+
+select2:
+  js:
+    js/select2.js: {}
+  dependencies:
+    - coherence_custom/select2.min
+    - core/sortable
+
+select2.min:
+  remote: https://github.com/select2/select2
+  license:
+    name: MIT
+    url: https://github.com/select2/select2/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    /libraries/select2/dist/js/select2.min.js: { minified: true }
+  css:
+    component:
+      /libraries/select2/dist/css/select2.min.css: {}
+  dependencies:
+    - core/jquery.once
+    - core/drupal

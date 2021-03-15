@@ -1,0 +1,6 @@
+name: JSON File Sync
+description: 'Sync data from JSON files into content types.'
+core_version_requirement: ^8.8 || ^9
+type: module
+package: Coherence
+configure: json_sync_test.settings

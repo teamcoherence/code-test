@@ -1,0 +1,102 @@
+<?php
+
+function coherence_custom_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+  $form['coherence'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Coherence'),
+    '#weight' => -100,
+  ];
+
+  $libraries = theme_get_setting('coherence_libraries');
+  $form['coherence']['coherence_libraries'] = [
+    '#type' => 'checkboxes',
+    '#title' => t('Enabled libraries'),
+    '#options' => [
+      'backToTop' => t('Back to top'),
+      'componentAnimation' => t('Component animation'),
+      'header' => t('Header'),
+      'scrollTo' => t('Scroll to'),
+      'socialSharing' => t('Social sharing'),
+      'select2' => t('Select2'),
+    ],
+    '#default_value' => is_array($libraries) ? $libraries : [],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * @param $attachments
+ */
+function coherence_custom_page_attachments_alter(&$attachments)
+{
+  $libraries = theme_get_setting('coherence_libraries');
+
+  if (is_array($libraries)) {
+    foreach (array_filter($libraries) as $library) {
+      $attachments['#attached']['library'][] = "coherence_custom/$library";
+    }
+  }
+}
+
+function coherence_custom_filter_ids()
+{
+  return [];
+}
+
+/**
+ * Implements hook_preprocess_bef_links().
+ *
+ * @param $vars
+ */
+function coherence_custom_preprocess_bef_links(&$vars)
+{
+  if (in_array($vars['element']['#name'], coherence_custom_filter_ids())) {
+    foreach (\Drupal\Core\Render\Element::children($vars['element']) as $key) {
+      $link = &$vars['element'][$key];
+      $link['#theme_wrappers'] = [];
+      $link['#attributes']['class'][] = 'coh-style-filter-link';
+
+      if (in_array($key, $vars['selected'])) {
+        $link['#attributes']['class'][] = 'is-active';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @param array $suggestions
+ * @param array $vars
+ */
+function coherence_custom_theme_suggestions_bef_links_alter(&$suggestions, $vars)
+{
+  if (in_array($vars['element']['#name'], coherence_custom_filter_ids())) {
+    $suggestions[] = 'bef_links__filters';
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function coherence_custom_preprocess_page(&$vars) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $user_routes = [
+    'user.register' => 'Register',
+    'user.login' => 'Login',
+    'user.pass' => 'Reset your password',
+  ];
+
+  if (in_array($route_name, array_keys($user_routes))) {
+    $title = "<h1>{$user_routes[$route_name]}</h1>";
+    $vars['page']['content']['#prefix'] = "<div class=\"coh-container coh-container-boxed\">$title";
+    $vars['page']['content']['#suffix'] = '</div>';
+  }
+}
+
+function coherence_custom_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-acquia-search-page') {
+    $form['keyword']['#attributes']['placeholder'] = 'e.g. apprenticeship';
+  }
+}

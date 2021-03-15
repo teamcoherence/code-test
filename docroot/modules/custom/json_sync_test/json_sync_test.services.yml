@@ -1,0 +1,9 @@
+services:
+  json.batch_manager:
+    class: 'Drupal\json_sync_test\BatchManager'
+    arguments: ['@queue', '@config.factory', '@logger.factory', '@entity_type.manager']
+  json.run_sync:
+    class: \Drupal\json_sync_test\Commands\JsonSync
+    arguments: ['@json.batch_manager']
+    tags:
+      - { name: drush.command }

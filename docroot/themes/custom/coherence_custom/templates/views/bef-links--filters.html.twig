@@ -1,0 +1,15 @@
+{%
+set classes = [
+'bef-links',
+]
+%}
+<div class="list-wrapper">
+<ul>
+{% for child in children %}
+    {% set item = attribute(element, child) %}
+    <li>
+    {{ item }}
+    </li>
+{% endfor %}
+</ul>
+</div>
